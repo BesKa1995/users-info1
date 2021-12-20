@@ -32,7 +32,7 @@ function Users() {
 
 	useEffect(() => {
 		setLoading(true)
-		if (pagination && (usersList.length) < pagination.total) {
+		if (pagination && (usersList.length) !== pagination.total) {
 
 			axios.get(`http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${pagination.current}/${pagination.pageSize}`)
 				.then(response => response.data.list)
